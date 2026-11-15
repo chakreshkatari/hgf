@@ -14,11 +14,19 @@
         <div class="gif_container">
             <img src="https://i.postimg.cc/wTDG30TB/yes.gif" alt="Cute animated illustration" />
         </div>
-        <audio controls autoplay>
+        <audio id="yesAudio" controls autoplay>
             <source src="audio.mp3" type="audio/mpeg" />
             Your browser does not support audio playback.
         </audio>
     </div>
+
+    <script>
+        const yesAudio = document.getElementById("yesAudio");
+        yesAudio.play().catch(() => {
+            // Some browsers block autoplay; keep the player available for a manual start.
+            yesAudio.controls = true;
+        });
+    </script>
 </body>
 
 </html>
