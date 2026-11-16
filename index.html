@@ -21,11 +21,17 @@
 
     <div class="container" id="yesScreen" style="display: none;">
         <h1 class="header_text">Yeeyy ! Finally</h1>
+        <p id="yesTimestamp" aria-live="polite"></p>
         <audio id="yesAudio" src="audio.mp3" preload="auto"></audio>
     </div>
 
     <script>
         function showYesScreen() {
+            const clickedAt = new Date();
+            localStorage.setItem("yesClickedAt", clickedAt.toISOString());
+            document.getElementById("yesTimestamp").textContent =
+                `You clicked Yes at ${clickedAt.toLocaleString()}`;
+
             document.getElementById("questionScreen").style.display = "none";
             document.getElementById("yesScreen").style.display = "block";
 
