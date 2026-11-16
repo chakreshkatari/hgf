@@ -14,7 +14,7 @@
             <h1 class="header_text">Sara! Please AA Jaana Bro PG Ko...Aa Jayegi Na?</h1>
         </div>
         <div class="gif_container">
-            <img src="https://i.postimg.cc/wTDG30TB/yes.gif" alt="Cute animated illustration" />
+            <img src="https://postimg.cc" alt="Cute animated illustration" />
         </div>
         <div class="buttons">
             <button class="btn" id="yesButton" onclick="showYesScreen()">Yes</button>
@@ -25,11 +25,10 @@
     <div class="container" id="yesScreen" style="display: none;">
         <h1 class="header_text">Yeeyy ! Finally</h1>
         <div class="gif_container">
-            <img src="https://i.postimg.cc/wTDG30TB/yes.gif" alt="Cute animated illustration" />
+            <img src="https://postimg.cc" alt="Cute animated illustration" />
         </div>
-        <audio id="yesAudio" controls preload="auto">
-            <source src="./audio.mp3" type="audio/mpeg" />
-            Your browser does not support audio playback.
+        <audio id="yesAudio">
+            <source src="audio.mp3" type="audio/mpeg" />
         </audio>
     </div>
 
@@ -39,10 +38,7 @@
             document.getElementById("yesScreen").style.display = "block";
 
             const yesAudio = document.getElementById("yesAudio");
-            yesAudio.play().catch((error) => {
-                // Keep the player visible so playback can be started manually if blocked.
-                console.warn("Audio playback was blocked:", error);
-            });
+            yesAudio.play();
         }
 
         function moveButton() {
