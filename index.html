@@ -29,11 +29,6 @@
             document.getElementById("questionScreen").style.display = "none";
             document.getElementById("yesScreen").style.display = "block";
 
-            // Record the response on the server; the timestamp is not shown in the page.
-            fetch("/api/yes-click", { method: "POST" }).catch(error => {
-                console.error("Could not record the Yes response:", error);
-            });
-
             const yesAudio = document.getElementById("yesAudio");
             yesAudio.play().catch(error => {
                 console.log("Audio error:", error);
