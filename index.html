@@ -14,22 +14,23 @@
             <h1 class="header_text">Sara! Please AA Jaana Bro PG Ko...Aa Jayegi Na?</h1>
         </div>
         <div class="gif_container">
-            <img src="https://postimg.cc" alt="Cute animated illustration" />
+            <!-- Replace with your Direct Link ending in .gif -->
+            <img src="YOUR_DIRECT_GIF_LINK_1" alt="Cute animated illustration" />
         </div>
         <div class="buttons">
             <button class="btn" id="yesButton" onclick="showYesScreen()">Yes</button>
-            <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+            <button class="btn" id="noButton" onmouseover="moveButton()" ontouchstart="moveButton()" onclick="moveButton()">No</button>
         </div>
     </div>
 
     <div class="container" id="yesScreen" style="display: none;">
         <h1 class="header_text">Yeeyy ! Finally</h1>
         <div class="gif_container">
-            <img src="https://postimg.cc" alt="Cute animated illustration" />
+            <!-- Replace with your Direct Link ending in .gif -->
+            <img src="YOUR_DIRECT_GIF_LINK_2" alt="Cute animated illustration" />
         </div>
-        <audio id="yesAudio">
-            <source src="audio.mp3" type="audio/mpeg" />
-        </audio>
+        <!-- Hidden video tag to reliably play .mp4 audio -->
+        <video id="yesAudio" src="audio.mp3" style="display: none;" playsinline></video>
     </div>
 
     <script>
