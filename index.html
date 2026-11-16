@@ -13,10 +13,6 @@
         <div>
             <h1 class="header_text">Sara! Please AA Jaana Bro PG Ko...Aa Jayegi Na?</h1>
         </div>
-        <div class="gif_container">
-            <!-- Replace with your Direct Link ending in .gif -->
-            <img src="YOUR_DIRECT_GIF_LINK_1" alt="Cute animated illustration" />
-        </div>
         <div class="buttons">
             <button class="btn" id="yesButton" onclick="showYesScreen()">Yes</button>
             <button class="btn" id="noButton" onmouseover="moveButton()" ontouchstart="moveButton()" onclick="moveButton()">No</button>
@@ -25,12 +21,7 @@
 
     <div class="container" id="yesScreen" style="display: none;">
         <h1 class="header_text">Yeeyy ! Finally</h1>
-        <div class="gif_container">
-            <!-- Replace with your Direct Link ending in .gif -->
-            <img src="YOUR_DIRECT_GIF_LINK_2" alt="Cute animated illustration" />
-        </div>
-        <!-- Hidden video tag to reliably play .mp4 audio -->
-        <video id="yesAudio" src="audio.mp3" style="display: none;" playsinline></video>
+        <audio id="yesAudio" src="audio.mp3" preload="auto"></audio>
     </div>
 
     <script>
@@ -39,7 +30,9 @@
             document.getElementById("yesScreen").style.display = "block";
 
             const yesAudio = document.getElementById("yesAudio");
-            yesAudio.play();
+            yesAudio.play().catch(error => {
+                console.log("Audio error:", error);
+            });
         }
 
         function moveButton() {
